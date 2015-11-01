@@ -1,0 +1,26 @@
+<div class="col-lg-4 col-md-6">
+<!-- 	specify dynamically panel color -->
+<!-- 	 panel-yellow -->
+<!-- 	 panel-yellow -->
+	<div class="panel" ng-class="wellType.panelColor">
+		<div class="panel-heading">
+			<div class="row">
+				<div class="col-xs-3">
+<!-- 					specify class for image -->
+					<i class="fa fa-5x" ng-class="wellType.faClass"></i>
+				</div>
+				<div class="col-xs-9 text-right">
+					<div class="huge">{{wellType.total}}</div>
+					<div>Jobs {{wellType.status}}</div>
+				</div>
+			</div>
+		</div>
+		<a href="#">
+			<div class="panel-footer">
+				<span class="pull-left">View Details</span> <span class="pull-right"><i
+					class="fa fa-arrow-circle-right"></i></span>
+				<div class="clearfix"></div>
+			</div>
+		</a>
+	</div>
+</div>

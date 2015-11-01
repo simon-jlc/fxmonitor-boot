@@ -1,0 +1,82 @@
+<div>
+	<div class="row">
+		<div class="col-lg-10"><h3>Job details (id: {{jobsCtrl.jobPanel.currentJob.id}} / linked id: {{jobsCtrl.jobPanel.currentJob.linkedId}})</h3></div>
+		<div class="col-lg-2">
+			<button type="button" class="btn btn disabled btn-block" ng-class="{ 
+				'btn-success' : jobsCtrl.jobPanel.currentJob.jobStatus.name == 'Success', 
+				'btn-danger' : jobsCtrl.jobPanel.currentJob.jobStatus.name == 'Failed', 
+				'btn-warning' : jobsCtrl.jobPanel.currentJob.jobStatus.name == 'Partially success' }">{{jobsCtrl.jobPanel.currentJob.jobStatus.name}}</button>
+		</div>
+	</div>
+		
+	<div class="row" style="margin-top: 15px">
+		<div class="col-lg-8">
+			<div class="panel panel-info">
+				<div class="panel-heading">Messages</div>
+				<!-- /.panel-heading -->
+				<div class="panel-body">
+					<div class="table-responsive" ng-show="jobsCtrl.jobPanel.currentJob.messages.length">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Description</th>
+									<th>File name</th>
+									<th class="center">Download</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="message in jobsCtrl.jobPanel.currentJob.messages">
+									<td>{{message.id}}</td>
+									<td>{{message.fileDescription}}</td>
+									<td>{{message.name}}</td>
+									<td class="center"><a href="#"><i class="fa fa-file-archive-o fa-2x"></i></a></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div ng-hide="jobsCtrl.jobPanel.currentJob.messages.length">
+						No messages found...
+					</div>
+					<!-- /.table-responsive -->
+				</div>
+				<!-- /.panel-body -->
+			</div>
+		</div>
+		
+		<div class="col-lg-4">
+			<div class="panel" ng-class="{ 
+				'panel-success' : jobsCtrl.jobPanel.currentJob.jobStatus.name == 'Success', 
+				'panel-danger' : jobsCtrl.jobPanel.currentJob.jobStatus.name == 'Failed', 
+				'panel-warning' : jobsCtrl.jobPanel.currentJob.jobStatus.name == 'Partially success' }">
+				<div class="panel-heading">Job information</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-lg-4">Started at:</div>
+						<div class="col-lg-8">{{jobsCtrl.jobPanel.currentJob.startDate
+							| date : 'dd/MM/yyyy hh:mm:ss'}}</div>
+					</div>
+	
+					<div class="row">
+						<div class="col-lg-4">Finished at:</div>
+						<div class="col-lg-8">{{jobsCtrl.jobPanel.currentJob.endDate
+							| date : 'dd/MM/yyyy hh:mm:ss'}}</div>
+					</div>
+	
+					<div class="row">
+						<div class="col-lg-4">Process:</div>
+						<div class="col-lg-8">{{jobsCtrl.jobPanel.currentJob.process.name}}</div>
+					</div>
+	
+					<div class="row">
+						<div class="col-lg-4">Categories:</div>
+						<div class="col-lg-8">{{toDisplayName(jobsCtrl.jobPanel.currentJob.process.categories)}}</div>
+					</div>
+	
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+</div>

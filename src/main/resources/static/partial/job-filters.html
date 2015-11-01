@@ -1,0 +1,68 @@
+<script type="text/ng-template" id="customTemplate.html">
+  <a>
+      <span ng-click="addToSelectedTags($index)" bind-html-unsafe="match.label | typeaheadHighlight:query"> TT </span>
+  </a>
+</script>
+
+<div id="filter-form">
+
+	<form>
+		<div clas="row">
+			<div class="col-lg-2">
+				<div class="form-group">
+					<label for="jobId">Job Id:</label>
+					<input type="text"
+						class="form-control" id="jobId">
+				</div>
+				
+				<div class="form-group">
+					<label for="linkId">Link id:</label> <input type="text"
+						class="form-control" id="linkId">
+				</div>
+			
+			</div>
+			
+			<div class="col-lg-3">
+
+				<div class="form-group">
+					<label for="dateFrom">From :</label> <span
+						ng-controller="UiDatePicker"><ui-date></ui-date></span>
+				</div>
+	
+	
+				<div class="form-group">
+					<label for="dateTo">To :</label> <span ng-controller="UiDatePicker"><ui-date></ui-date></span>
+				</div>
+				
+			</div>
+			
+			<div class="col-lg-7">
+				<div class="form-group">
+				
+					<label for="category">Category:</label>
+					<div auto-complete url="api/jobs/categories/" model="filters.categories"></div>
+				</div>
+				<div class="form-group">
+					<label for="process">Process:</label> 
+<!-- 					<div auto-complete url="api/jobs/processes/" model="filters.processes"></div> -->
+
+					<input type="text" placeholder="Start typing..." 
+						ng-model="iProcess" 
+						ng-keydown="checkKeyDown($scope.filters.processes, $event)"
+						typeahead="process for process in loadProcess($viewValue)"
+						typeahead-editable="false" 
+						typeahead-loading="loadingLocations"
+						typeahead-min-length="1"
+						class="form-control">
+    				<i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8"></div>
+			<div class="col-lg-4">
+				<button type="submit" class="btn btn-info pull-right" style="min-width: 60px;margin-right: 15px;">GO !</button>
+			</div>
+		</div>
+	</form>
+</div>

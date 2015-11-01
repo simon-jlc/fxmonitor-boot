@@ -1,0 +1,16 @@
+<div class="row" th:fragment="displayMessage(msgType, msg)">
+	<div class="col-lg-12">
+		<div class="panel-body">
+			
+			<div th:attr="class=${'alert ' + msgType}" > 
+				<!-- msgType match 
+					case SUCC =>  alert-success 
+					case INFO	=>  alert-info 
+					case WARN =>  alert-warning
+					case ERR 	=>  alert-danger -->
+			
+			<span th:text="${msg}"></span>
+			</div>
+		</div>
+	</div>
+</div>

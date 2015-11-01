@@ -1,0 +1,1 @@
+curl --request POST --header "Content-type: application/json" --data '[{"ids":6},{"ids":7}]' http://localhost:8080/api/jobs/resolve

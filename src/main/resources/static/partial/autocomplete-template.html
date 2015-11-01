@@ -1,0 +1,41 @@
+<div class="tags-wrapper">
+	<div id="tagsList" class="tags-cloud dropdown">
+		
+		<input type="text" placeholder="Start typing" id="searchInput"
+			ng-keydown="checkKeyDown($event)" class="form-control"
+			ng-model="searchText" ng-change="search()" data-toggle="dropdown" />
+		<ul id="suggestions" class="dropdown-menu" role="menu">
+			<li role="presentation" ng-repeat="suggestion in suggestions"
+				ng-click="addToSelectedTags($index)"
+				ng-mouseover="$parent.selectedIndex=$index"
+				ng-class="{active : selectedIndex===$index}">
+				<a href="#" role="menuitem" tabindex="-1">{{suggestion}}</a></li>
+		</ul>
+
+	</div>
+
+<!-- 	<ul id="suggestions" class="suggestions-list"> -->
+<!-- 		<li ng-repeat="suggestion in suggestions" class="blockSpan" -->
+<!-- 			ng-click="addToSelectedTags($index)" -->
+<!-- 			ng-mouseover="$parent.selectedIndex=$index" -->
+<!-- 			ng-class="{active : selectedIndex===$index}">{{suggestion}}</li> -->
+<!-- 	</ul> -->
+
+<!-- 	<div class="dropdown"> -->
+<!-- 		<button class="btn btn-default dropdown-toggle" type="button" -->
+<!-- 			id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true"> -->
+<!-- 			Dropdown <span class="caret"></span> -->
+<!-- 		</button> -->
+<!-- 		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"> -->
+<!-- 			<li role="presentation"><a role="menuitem" tabindex="-1" -->
+<!-- 				href="#">Action</a></li> -->
+<!-- 			<li role="presentation"><a role="menuitem" tabindex="-1" -->
+<!-- 				href="#">Another action</a></li> -->
+<!-- 			<li role="presentation"><a role="menuitem" tabindex="-1" -->
+<!-- 				href="#">Something else here</a></li> -->
+<!-- 			<li role="presentation"><a role="menuitem" tabindex="-1" -->
+<!-- 				href="#">Separated link</a></li> -->
+<!-- 		</ul> -->
+<!-- 	</div> -->
+
+</div>

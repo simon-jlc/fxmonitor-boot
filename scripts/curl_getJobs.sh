@@ -1,0 +1,1 @@
+curl --request GET --header "Content-type: application/json" http://localhost:8080/api/stats/categories/1

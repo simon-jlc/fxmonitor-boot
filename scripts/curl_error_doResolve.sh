@@ -1,0 +1,1 @@
+curl --request POST --header "Content-type: application/json" --data '[{"name1": "test"},{"name1": "toto"}]' http://localhost:9000/api/jobs/resolve
