@@ -14,6 +14,8 @@ ___
 ##### Rendering view
 - [Thymeleaf] - Web page rendered using Thymeleaf
 - [AngularJS] - HTML enhanced for web apps!
+- [TrNgGrid] - A feature rich Angular grid using standard HTML tables (DEPRECATED)
+- [Start Bootstrap] - Start Bootstrap - SB Admin 2 Bootstrap Admin Theme
 
 ### Installation
 ___
@@ -23,11 +25,17 @@ $ mvn clean install -T 8
 $ mvn spring-boot:run
 ```
 
+Open your favortie browser (Chrome actually :)):
+```
+http://localhost:8080/login
+```
+
+
 ### TODO
 
 - Add spring-security
 - Add view tests samples
-- Screen implementation
+- Finalize features of screens (Transcodifications/Administration)
 
 [Spring - Fwk]: <https://github.com/spring-projects/spring-framework>
 [Spring - Boot]: <https://github.com/spring-projects/spring-boot>
@@ -35,3 +43,5 @@ $ mvn spring-boot:run
 [Thymeleaf]: <http://www.thymeleaf.org/>
 [AngularJS]: <http://angularjs.org>
 [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
+[Start Bootstrap]: <http://startbootstrap.com>
+[TrNgGrid]: <https://github.com/MoonStorm/trNgGrid>
